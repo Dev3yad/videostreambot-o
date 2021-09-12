@@ -1,35 +1,34 @@
 {
-    "name": "Video Stream ",
+    "name": "Video Stream",
     "description": "Video Stream Telegram Bot",
     "keywords": [
         "Video Stream ",
         "pytgcalss"
     ],
-    "repository": "https://github.com/lntechnical2/videostream",
-    "success_url": "https://telegram.dog/lntechnical",
+    "repository": "https://github.com/Dev3yad/videostream1",
     "env": {
         "CHAT": {
-            "description": "Channel or Group user Name With @",
+            "description": "اسم مستخدم القناة أو المجموعة مع @",
             "value": ""
          },
         "SESSION_NAME": {
-            "description": "Pyrogram String Session",
+            "description": "كود التيرميكس",
             "value": ""
         },
         "API_ID": {
-            "description": "Your APP ID From my.telegram.org ",
+            "description": "ايبي ايدي my.telegram.org ",
             "value": ""
         },
         "API_HASH": {
-            "description": "Your API Hash From my.telegram.org ",
+            "description": "ايبي هاش my.telegram.org ",
             "value": ""
         },
         "TOKEN": {
-            "description": "Your Bot Token From @BotFather",
+            "description": "توكن البوت @BotFather",
             "value": ""
         },
         "ADMIN": {
-            "description":"Add Your User ID"
+            "description":"الادمن"
         }
     },
     "buildpacks": [
