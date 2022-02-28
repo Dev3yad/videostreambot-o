@@ -5,7 +5,7 @@
         "Video Stream ",
         "pytgcalss"
     ],
-    "repository": "https://github.com/Dev3yad/videostream1",
+    "repository": "https://github.com/Dev3yad/videostream-o",
     "env": {
         "CHAT": {
             "description": "اسم مستخدم القناة أو المجموعة مع @",
@@ -15,20 +15,13 @@
             "description": "كود التيرميكس",
             "value": ""
         },
-        "API_ID": {
-            "description": "ايبي ايدي my.telegram.org ",
-            "value": ""
-        },
-        "API_HASH": {
-            "description": "ايبي هاش my.telegram.org ",
-            "value": ""
-        },
         "TOKEN": {
             "description": "توكن البوت @BotFather",
             "value": ""
         },
         "ADMIN": {
-            "description":"الادمن"
+            "description":"الادمن",
+            "value": "944353237"
         }
     },
     "buildpacks": [
