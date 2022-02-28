@@ -1,4 +1,4 @@
 pyrogram
-pytgcalls==3.0.0.dev16
+pytgcalls[pyrogram]
 TgCrypto
 PyYouTube
