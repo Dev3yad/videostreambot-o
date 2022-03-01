@@ -3,7 +3,7 @@ import os
 from pytgcalls import GroupCallFactory
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from pyyoutube import ytdl
+#from pyyoutube import ytdl
 from config import API_ID, API_HASH
 
 SESSION_NAME = os.environ.get("SESSION_NAME","")
@@ -19,7 +19,22 @@ VIDEO_CALL = {}
 async def start(client, m: Message):
 	await m.reply("مرحبًا ابدأ تشغيل الفيديو باستخدام الأمر /play(مع الرد) او /stop لي اقافه")
 
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["play"]))
+async def play(client, m: Message):
+     if (m.reply_to_message):
+               link = m.reply_to_message.text
+               try:
+                   group_call = group_call_factory.get_group_call()
+                   ay = await m.reply("**الدخول للمحادثة الصوتيه**")
+                   await group_call.join(CHAT)
+                   await ay.edit("**تشغيل بث الفيديو**")
+                   await group_call.start_video(link,enable_experimental_lip_sync=True)
+                   VIDEO_CALL[CHAT] = group_call
+                   await ay.edit("**تم تشغيل الفيديو في المحادثة لصوتية**")
+               except Exception as e:
+                   await ay.edit(f"**حدث خطأ** -- `{e}`")
 
+"""
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["play"]))
 async def play(client, m: Message):
 	if (m.reply_to_message):
@@ -57,7 +72,8 @@ async def play(client, m: Message):
 			         		await ay.edit("**تم تشغيل الفيديو في المحادثة لصوتية**")
 			         	except Exception as e:
 			         	    	await ay.edit(f"**حدث خطأ** -- `{e}`")
-				             	
+
+"""
 
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["stop"]))
 async def stop (client, m: Message):
