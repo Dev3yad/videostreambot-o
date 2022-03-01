@@ -24,8 +24,9 @@ async def play(client, m: Message):
      if (m.reply_to_message):
                link = m.reply_to_message.text
                try:
+                   ay = await m.reply("**استدعاء الحساب**")
                    group_call = group_call_factory.get_group_call()
-                   ay = await m.reply("**الدخول للمحادثة الصوتيه**")
+                   await ay.edit("**الدخول للمحادثة الصوتيه**")
                    await group_call.join(CHAT)
                    await ay.edit("**تشغيل بث الفيديو**")
                    await group_call.start_video(link,enable_experimental_lip_sync=True)
